@@ -3,6 +3,9 @@ This is a calculator designed to determine partner commission on a weekly basis.
 You can adjust the numbers in the variable section as needed to determine daily, monthly, or yearly values if needed.
 If you wanted daily numbers instead of weekly you would divide the necessary variables by 7. 
 i.e, you would change eden_base to be (600/7) or 85.714 and base_pay to (800/7) or 114.286.
+To use this calculator download both the html file and the js file.  Keep them in the same folder.  Open the html file in google chrome
+and press F12 to open the developer tools panel.  In this panel select the 'console' tab to view the info.  
+After we have moved this file to node.js and created an api, the app will be live, and you can just visit tabby.style/pay instead. 
 */
 
 let pay = function(sales_total) {
