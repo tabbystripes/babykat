@@ -1,7 +1,7 @@
 /*
 This is a calculator designed to determine partner commission on a weekly basis. 
 You can adjust the numbers in the variable section as needed to determine daily, monthly, or yearly values if needed.
- if you wanted daily numbers instead of weekly you would divide the necessary variables by 7. 
+If you wanted daily numbers instead of weekly you would divide the necessary variables by 7. 
 i.e, you would change eden_base to be (600/7) or 85.714 and base_pay to (800/7) or 114.286.
 */
 
