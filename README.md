@@ -1,5 +1,4 @@
-# babykat
-I'm just a baby!
+# Eden Pay Calculator
 
 4/24/20
 Took the js file and added an HTML Shell with stylesheet and logo.
