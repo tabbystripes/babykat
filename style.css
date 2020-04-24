@@ -1,0 +1,76 @@
+.grid-1 {
+	background: #F2D4FA;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: 205px repeat(6,auto);
+	grid-gap: 0px;
+}
+
+.logo {
+
+	background: white;
+	text-align: center;
+	grid-row: 1;
+	grid-column: 1 / span 2;
+	box-shadow: 5px 10px 8px #EAC0F5;
+}
+
+.partner_label {
+	padding: 15px;
+	padding-top: 25px;
+	text-align: right;
+}
+
+.partner_input {
+	padding: 15px;
+	padding-top: 25px;
+}
+
+.earnings_label {
+	padding: 15px;
+	text-align: right;
+}
+
+.earnings_input {
+	padding: 15px;
+}
+
+.tips_label {
+	padding: 15px;
+	text-align: right;
+}
+
+.tips_input {
+	padding: 15px;
+	padding-bottom: 25px;
+
+}
+
+.runit {
+	background: white;
+	padding: 25px;
+	text-align: center;
+	grid-column: 1 / span 2;
+	box-shadow: -5px -10px 8px #EAC0F5;
+}
+
+.output {
+	background: white;
+	color: black;
+	text-align: center;
+	grid-column: 1 / span 2;
+	grid-row: 6;
+	padding-bottom: 25px;
+}
+
+.char {
+	background: white;
+	padding: 15px;
+	text-align: center;
+	grid-column: 1/span 2;
+}
+
+body {
+	font-family: sans-serif;
+
+}
