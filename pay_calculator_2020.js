@@ -12,8 +12,6 @@ var char = document.getElementById("char");
 var handoff = '';
 var bonus = 0;
 
-
-
 //2. Write the functions
 let fork = function(event){
 	event.preventDefault(); // 2.a This prevents the page from refreshing instantly
@@ -29,7 +27,6 @@ let fork = function(event){
 
 };
 
-
 let pay = function(){
 	console.log("Pay Function has run");
 
@@ -37,11 +34,11 @@ let pay = function(){
   	let sales_total = Number(service_sales.value).toFixed(2);
     let tips = Number(unrefined_tips.value).toFixed(2);
   	let combined_total_earned = +sales_total + +tips; //added the extra + in front to force it to behave like a number.
-  	let eden_base = 600;
+  	let eden_base = 650;
   	let amount_owed = ~eden_base - ~sales_total;
   	let base_pay = 800;
   	let pay_cap = eden_base + base_pay;
-  	let eden_percent = .10;
+  	let eden_percent = .30;
   	let gross_commission = sales_total - eden_base;
   	let net_commission = gross_commission - base_pay;
   	let eden_cut = net_commission * eden_percent;
@@ -64,13 +61,13 @@ let pay = function(){
    	 results += `<p>Oh no!  You owe the business <strong style="color:red;">$${amount_owed}</strong> this week.</p>`
 		 handoff = amount_owed;
   		} else if (sales_total == eden_base) {
-   	 results += `<p>Well, look at that.  You broke even this week.  Thank you for helping keep the lights on :)</p><br>There  is no takehome pay, but you do not owe anything either.  Bittersweet.`;
+   	 results += `<p>Well, look at that.  You broke even this week.</p><p>Thank you for helping keep the lights on :)</p><br>There  is no takehome pay, but you do not owe anything either.<p>Don't forget: You earned <strong  style="color:#89b940;">$${tips}</strong> in tips!</p>`;
 		 handoff = combined_total_earned.toFixed(2);
 		} else if (sales_total > eden_base && sales_total <= pay_cap) {
-		 results += `<p>Takehome (without tips): <strong style="color:#89b940;">$${gross_commission}</strong>.</p>Combined Takehome <strong  style="color:#89b940;">$${combined_takehome_without_bonus}</strong>.<p>You might want to work more next week.</p>`;
+		 results += `<p>Takehome (without tips): <strong>$${gross_commission}</strong>.</p><p>Eden's Fee: <strong style="color:red;">$${eden_base}</strong></p><p>Combined Takehome <strong  style="color:#89b940;">$${combined_takehome_without_bonus}</strong>.</p><p>You might want to work more next week.</p>`;
 		 handoff = combined_takehome_without_bonus;
 		} else if (sales_total > eden_base && sales_total > pay_cap) {
-   	 results += `<p>Woohoo!  You made so much you earned a bonus!</p><p>Eden's Fee: <strong style="color:#89b940;">$${eden_final_rounded}</strong><p>Takehome (w/o tips): <strong style="color:#89b940;">$${partner_final.toFixed(2)}</strong>.</p>Combined Takehome: <strong  style="color:#89b940;">$${combined_takehome_with_bonus.toFixed(2)}</strong></p></p>Bonus: <strong  style="color:#89b940;">$${bonus.toFixed(2)}</strong></p>`
+   	 results += `<p>Congratulations!  You've earned a bonus!</p><p>Eden's Fee: <strong style="color:red;">$${eden_final_rounded}</strong><p>Takehome (w/o tips): <strong>$${partner_final.toFixed(2)}</strong> (<strong style="color:#89b940;">$${bonus.toFixed(2)}</strong> in Bonus Pay!).</p></p>Combined Takehome: <strong  style="color:#89b940;">$${combined_takehome_with_bonus.toFixed(2)}</strong></p>`
 		 handoff = combined_takehome_with_bonus.toFixed(2);
 		};
 	endgame.innerHTML = results;
@@ -81,10 +78,12 @@ let pay = function(){
 	let charlotte = function(){
 		console.log("Charlotte Function has run");
 		pay();
+		/*
 		let sales_total = Number(service_sales.value).toFixed(2);
   	let tips = Number(unrefined_tips.value).toFixed(2);
 		char.innerHTML += `error line 86`
 		char.innerHTML = `<strong>Total Takehome: $${handoff}  |  Your bonus is : $${bonus.toFixed(2)}</strong>`;
+		*/
 		};
 
 // 3. Assign event listeners to the button

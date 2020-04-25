@@ -1,0 +1,20 @@
+{
+  "name": "Eden-Partner-Pay-Calculator",
+  "version": "1.0.3",
+  "description": "Calculator for Payroll",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds",
+    "package-win": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/eden.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Eden Partner Pay Calculator\"",
+    "package-linux": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=true --out=release-builds"
+  },
+  "author": "Charlotte",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^8.2.3"
+  },
+  "devDependencies": {
+    "electron-packager": "^14.2.1"
+  }
+}
